@@ -1,21 +1,20 @@
-function karateConfig() {
-  var env = karate.env; // get java system property 'karate.env'
+function fn() {
+  var env = karate.env; // get system property 'karate.env'
   karate.log('karate.env system property was:', env);
   if (!env) {
-    env = 'dev'; // a custom 'intelligent' default
+    env = 'dev';
   }
+  var config = {
+    env: env,
+    myVarName: 'someValue'
+  }
+  config = karate.callSingle('classpath:examples/assert-json.feature', config);
 
-  karate.log('env:', env);
-  var config = { // base config JSON
-    env: env
-  };
-  config = karate.callSingle('classpath:setup.feature', config);
-
-  karate.configure('connectTimeout', 300000);
-  karate.configure('readTimeout', 300000);
-
-  karate.configure('logPrettyResponse', true);
-  karate.configure('logPrettyRequest', true);
-
+  if (env == 'dev') {
+    // customize
+    // e.g. config.foo = 'bar';
+  } else if (env == 'e2e') {
+    // customize
+  }
   return config;
 }
