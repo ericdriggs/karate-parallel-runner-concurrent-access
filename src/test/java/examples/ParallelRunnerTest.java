@@ -1,12 +1,16 @@
+package examples;
+
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-class ParallelTestRunner {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class ParallelRunnerTest {
 
     @Test
-    void testParallel() {
+    public void testParallel() {
+        System.out.println("### ParallelTestRunner:testParallel");
         Results results = Runner.path("classpath:examples")
                 .tags("~@ignore")
                 .outputCucumberJson(true)
