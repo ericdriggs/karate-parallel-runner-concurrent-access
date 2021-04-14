@@ -9,7 +9,7 @@ function karateConfig() {
   var config = { // base config JSON
     env: env
   };
-  config = karate.callSingle('classpath:setup-util.feature', config);
+  config = karate.callSingle('classpath:setup.feature', config);
 
   karate.configure('connectTimeout', 300000);
   karate.configure('readTimeout', 300000);
