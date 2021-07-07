@@ -5,11 +5,11 @@ Feature: common setup functionality for tests
 
     * def Hello = Java.type('examples.Hello')
 
-    * def getHello =
+    * def sayHello =
     """
     function (message) {
-      var Hello = Java.type('examples.Hello');
-      return Hello.getHello(message)
+      var HelloFactory = Java.type('examples.Hello').sayHelloFactory();
+      return Hello.sayHello(message)
     }
     """
 

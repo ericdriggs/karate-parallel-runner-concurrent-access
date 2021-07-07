@@ -7,12 +7,12 @@
 
       * karate.log('### bar test')
       * def expectedHello = "hello bar"
-      * def actualHello = getHello("bar")
+      * def actualHello = sayHello("bar")
       * match expectedHello == actualHello
 
     Scenario: baz test
 
       * karate.log('### baz test')
       * def expectedHello = "hello baz"
-      * def actualHello = getHello("baz")
+      * def actualHello = sayHello("baz")
       * match expectedHello == actualHello

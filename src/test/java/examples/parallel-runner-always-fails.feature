@@ -10,12 +10,12 @@ Feature:
 
     * karate.log('### foo test 1')
     * def expectedHello = "hello foo"
-    * def actualHello = Hello.getHello("foo")
+    * def actualHello = Hello.sayHello("foo")
     * match expectedHello == actualHello
 
   Scenario: foo test 2
 
     * karate.log('### foo test 2')
     * def expectedHello = "hello foo"
-    * def actualHello = Hello.getHello("foo")
+    * def actualHello = Hello.sayHello("foo")
     * match expectedHello == actualHello
